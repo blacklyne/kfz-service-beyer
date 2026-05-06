@@ -142,19 +142,34 @@ const iconMap: Record<string, string> = {
   <!-- Werkstatt-Beschreibung -->
   <section class="py-14 md:py-20 bg-[var(--color-bg)]">
     <div class="container-x">
-      <div class="max-w-3xl">
-        <span class="text-sm font-semibold text-[var(--color-accent)] uppercase tracking-wider">Die Werkstatt</span>
-        <h2 class="text-3xl md:text-4xl font-bold mt-3 mb-6 leading-tight">Modern ausgestattet, persönlich geführt.</h2>
-        <div class="space-y-5 text-lg text-[var(--color-text-muted)] leading-relaxed">
-          <p>
-            Unsere Werkstatt ist mit aktueller Diagnose- und Klima-Service-Technik ausgestattet - wir können Fehlerspeicher aller gängigen Marken auslesen, Sensoren und Steuergeräte anlernen und auch moderne Klimaanlagen mit R1234yf bedienen.
-          </p>
-          <p>
-            Gleichzeitig ist bei uns nichts „Massenabfertigung". Jedes Fahrzeug bekommt die Aufmerksamkeit, die es braucht. Wenn ein Teil günstiger zu reparieren statt zu tauschen ist, sagen wir es Ihnen - auch wenn wir damit weniger verdienen.
-          </p>
-          <p>
-            <strong>Sie können Ihren Wagen morgens abgeben</strong>, in die nahegelegene U-Bahn steigen und zur Arbeit fahren. Wir rufen Sie an, sobald wir den Fehler gefunden haben, und sprechen die Reparatur ab. Am Abend ist das Auto in vielen Fällen schon wieder fertig.
-          </p>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div class="lg:col-span-7">
+          <span class="text-sm font-semibold text-[var(--color-accent)] uppercase tracking-wider">Die Werkstatt</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-3 mb-6 leading-tight">Modern ausgestattet, persönlich geführt.</h2>
+          <div class="space-y-5 text-lg text-[var(--color-text-muted)] leading-relaxed">
+            <p>
+              Unsere Werkstatt ist mit aktueller Diagnose- und Klima-Service-Technik ausgestattet - wir können Fehlerspeicher aller gängigen Marken auslesen, Sensoren und Steuergeräte anlernen und auch moderne Klimaanlagen mit R1234yf bedienen.
+            </p>
+            <p>
+              Gleichzeitig ist bei uns nichts „Massenabfertigung". Jedes Fahrzeug bekommt die Aufmerksamkeit, die es braucht. Wenn ein Teil günstiger zu reparieren statt zu tauschen ist, sagen wir es Ihnen - auch wenn wir damit weniger verdienen.
+            </p>
+            <p>
+              <strong>Sie können Ihren Wagen morgens abgeben</strong>, in die nahegelegene U-Bahn steigen und zur Arbeit fahren. Wir rufen Sie an, sobald wir den Fehler gefunden haben, und sprechen die Reparatur ab. Am Abend ist das Auto in vielen Fällen schon wieder fertig.
+            </p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="relative rounded-3xl overflow-hidden border border-[var(--color-border)] shadow-xl shadow-black/10 aspect-[4/5]">
+            <img
+              src="https://images.pexels.com/photos/4489761/pexels-photo-4489761.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              alt="Mechaniker bei Reparaturarbeiten in der Kfz-Werkstatt"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              width="1200"
+              height="1500"
+            />
+          </div>
         </div>
       </div>
     </div>
