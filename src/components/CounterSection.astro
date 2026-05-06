@@ -1,0 +1,31 @@
+---
+import { business } from '../data/business';
+
+const counters = [
+  { value: business.google.stars, suffix: '★', label: 'Durchschnitt auf Google' },
+  { value: business.google.count, suffix: '', label: 'echte Google-Bewertungen' },
+  { value: '100%', suffix: '', label: 'inhabergeführter Familienbetrieb' },
+];
+---
+
+<section class="bg-[var(--color-bg-dark)] text-white py-16 md:py-24">
+  <div class="container-x">
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4">Worauf sich unsere Kunden verlassen.</h2>
+      <p class="text-white/70 max-w-2xl mx-auto text-lg leading-relaxed">
+        Vertrauen baut sich nicht über Werbung auf — sondern darüber, dass das Auto läuft, der Preis stimmt und der Termin gehalten wird.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+      {counters.map((c) => (
+        <div class="text-center">
+          <div class="text-6xl md:text-7xl font-bold text-[var(--color-accent)] mb-2 leading-none font-num">
+            {c.value}<span class="text-4xl md:text-5xl">{c.suffix}</span>
+          </div>
+          <div class="text-white/75 text-base md:text-lg">{c.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,128 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingPhone from '../components/FloatingPhone.astro';
+import { business, services } from '../data/business';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  /** Falls true, wird kein lokaler 'mainEntity'-Schema-Block ausgegeben.
+   * Standard: false – jede Seite hat den Business-Schema-Block. */
+  noBusinessSchema?: boolean;
+}
+
+const { title, description, ogImage = '/og-default.svg', noBusinessSchema = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+
+// Schema.org: AutoRepair (Subtype von LocalBusiness) — präziser für Werkstätten.
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'AutoRepair',
+  '@id': new URL('/#business', Astro.site).toString(),
+  name: business.name,
+  image: new URL('/logo.svg', Astro.site).toString(),
+  url: Astro.site?.toString(),
+  telephone: business.phone,
+  email: business.email,
+  priceRange: '€€',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: business.street,
+    postalCode: business.zip,
+    addressLocality: business.city,
+    addressRegion: 'Bayern',
+    addressCountry: business.country,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: business.geo.lat,
+    longitude: business.geo.lng,
+  },
+  openingHoursSpecification: business.openingHoursSchema,
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: business.google.starsNumeric,
+    reviewCount: business.google.countNumeric,
+    bestRating: 5,
+    worstRating: 1,
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Leistungen',
+    itemListElement: services.map((s) => ({
+      '@type': 'OfferCatalogItem',
+      itemOffered: {
+        '@type': 'Service',
+        name: s.title,
+        description: s.short,
+      },
+    })),
+  },
+  areaServed: [
+    { '@type': 'City', name: 'München' },
+    { '@type': 'AdministrativeArea', name: 'München-Moosach' },
+    { '@type': 'AdministrativeArea', name: 'München-Neuhausen' },
+    { '@type': 'AdministrativeArea', name: 'München-Gern' },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#F39239" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content={business.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site).toString()} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site).toString()} />
+
+    <!-- Lokale SEO -->
+    <meta name="geo.region" content="DE-BY" />
+    <meta name="geo.placename" content="München" />
+    <meta name="geo.position" content={`${business.geo.lat};${business.geo.lng}`} />
+    <meta name="ICBM" content={`${business.geo.lat}, ${business.geo.lng}`} />
+
+    <!-- Fonts: Inter + Manrope -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    {!noBusinessSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+    )}
+    <slot name="schema" />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <FloatingPhone />
+  </body>
+</html>

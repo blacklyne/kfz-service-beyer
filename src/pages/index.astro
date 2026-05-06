@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import UspCards from '../components/UspCards.astro';
+import Services from '../components/Services.astro';
+import AboutSection from '../components/AboutSection.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import CounterSection from '../components/CounterSection.astro';
+import Reviews from '../components/Reviews.astro';
+import CtaSection from '../components/CtaSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+
+const title = 'Kfz Service Beyer · Werkstatt München (Moosach / Neuhausen)';
+const description =
+  'Inhabergeführte Kfz-Werkstatt in München, Waisenhausstraße 44 — fußläufig zur U-Bahn. HU/AU, Inspektion, Reparatur, Klima, Reifen. 4,8 ★ Google. Faire Preise, persönlich.';
+---
+
+<Layout title={title} description={description}>
+  <Hero />
+  <UspCards />
+  <Services />
+  <AboutSection />
+  <HowItWorks />
+  <CounterSection />
+  <Reviews />
+  <ContactSection />
+  <CtaSection />
+</Layout>

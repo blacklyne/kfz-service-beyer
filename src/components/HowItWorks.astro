@@ -1,0 +1,45 @@
+---
+import { business } from '../data/business';
+
+const steps = [
+  {
+    n: '1',
+    title: 'Anrufen',
+    text: `Rufen Sie uns kurz an unter ${business.phoneDisplay}. Wir besprechen das Anliegen und finden einen Termin — oft schon in dieser oder nächster Woche.`,
+  },
+  {
+    n: '2',
+    title: 'Vorbeibringen',
+    text: `Bringen Sie Ihr Auto in die Waisenhausstraße 44. ${business.owner} nimmt persönlich auf. Sie bekommen einen klaren Kostenvoranschlag, bevor wir loslegen.`,
+  },
+  {
+    n: '3',
+    title: 'Abholen',
+    text: 'Sie holen Ihr Auto fertig ab. Wir erklären Ihnen, was gemacht wurde — und was bei der nächsten Inspektion fällig wird.',
+  },
+];
+---
+
+<section class="bg-[var(--color-bg)] py-16 md:py-28">
+  <div class="container-x">
+    <div class="max-w-2xl mb-10 md:mb-14">
+      <span class="text-sm font-semibold text-[var(--color-accent)] uppercase tracking-wider">So einfach geht's</span>
+      <h2 class="text-3xl md:text-5xl font-bold mt-3 mb-4 leading-tight">Drei Schritte, kein Papierkram.</h2>
+      <p class="text-lg text-[var(--color-text-muted)] leading-relaxed">
+        Keine Termin-App, keine Online-Formulare. Ein Anruf genügt — wir kümmern uns um den Rest.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 relative">
+      {steps.map((s) => (
+        <div class="bg-white rounded-2xl p-7 md:p-8 border border-[var(--color-border)] relative shadow-sm">
+          <div class="text-6xl md:text-7xl font-bold text-[var(--color-accent)] leading-none mb-4 opacity-90 font-num">
+            {s.n}
+          </div>
+          <h3 class="text-xl md:text-2xl font-bold mb-2">{s.title}</h3>
+          <p class="text-[var(--color-text-muted)] leading-relaxed">{s.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Reviews from '../components/Reviews.astro';
+import CtaSection from '../components/CtaSection.astro';
+import { business } from '../data/business';
+
+const title = 'Über uns · Kfz Service Beyer München — Ihre inhabergeführte Werkstatt';
+const description =
+  'Inhabergeführte Kfz-Werkstatt in München. Unsere Werte: Ehrlichkeit, faire Preise und keine bösen Überraschungen. Lernen Sie Kfz Service Beyer kennen.';
+
+const values = [
+  {
+    title: 'Ehrlichkeit',
+    text: 'Wir sagen Ihnen, was nötig ist — und genauso, was warten kann. Keine Standard-Pakete, keine Angst-Diagnose.',
+    icon: 'shield',
+  },
+  {
+    title: 'Faire Preise',
+    text: 'Vorab klarer Kostenvoranschlag. Kommt etwas dazu, rufen wir an, bevor wir loslegen. Sie zahlen nie mehr als besprochen.',
+    icon: 'tag',
+  },
+  {
+    title: 'Persönlich',
+    text: `${business.owner} steht selbst in der Werkstatt. Sie sprechen mit dem Mechaniker, nicht mit einem Sachbearbeiter.`,
+    icon: 'user',
+  },
+  {
+    title: 'Verlässlich',
+    text: 'Termin zugesagt heißt Termin gehalten. Reparaturen oft schneller als anderswo — ohne dass die Qualität leidet.',
+    icon: 'clock',
+  },
+];
+
+const iconMap: Record<string, string> = {
+  shield: 'M12 3l8 3v6c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V6l8-3z M9 12l2 2 4-4',
+  tag: 'M3 12l9-9h7v7l-9 9z',
+  user: 'M12 12a4 4 0 100-8 4 4 0 000 8zM4 21c1.5-4 4.5-6 8-6s6.5 2 8 6',
+  clock: 'M12 6v6l4 2 M12 22a10 10 0 100-20 10 10 0 000 20z',
+};
+---
+
+<Layout title={title} description={description}>
+  <!-- Page Header -->
+  <section class="py-14 md:py-20 bg-[var(--color-bg-alt)]">
+    <div class="container-x">
+      <nav aria-label="Breadcrumb" class="text-sm text-[var(--color-text-muted)] mb-4">
+        <ol class="flex items-center gap-2">
+          <li><a href="/" class="hover:text-[var(--color-accent)]">Start</a></li>
+          <li aria-hidden="true">›</li>
+          <li class="text-[var(--color-text)] font-medium" aria-current="page">Über uns</li>
+        </ol>
+      </nav>
+      <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-5 max-w-3xl">
+        Eine Werkstatt mit Handschlag-Mentalität.
+      </h1>
+      <p class="text-lg md:text-xl text-[var(--color-text-muted)] max-w-2xl leading-relaxed">
+        Kfz Service Beyer ist eine inhabergeführte Werkstatt in München. Klein genug, dass Sie persönlich betreut werden — gut genug, dass auch Münchner Stammkunden seit Jahren wiederkommen.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story Section -->
+  <section class="py-14 md:py-20 bg-[var(--color-bg)]">
+    <div class="container-x">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+        <div class="lg:col-span-7">
+          <span class="text-sm font-semibold text-[var(--color-accent)] uppercase tracking-wider">Unsere Geschichte</span>
+          <h2 class="text-3xl md:text-4xl font-bold mt-3 mb-6 leading-tight">
+            Inhabergeführt von {business.owner}.
+          </h2>
+          <div class="space-y-5 text-lg text-[var(--color-text-muted)] leading-relaxed">
+            <p>
+              In der Waisenhausstraße 44 — am Übergang zwischen Moosach und Neuhausen, fußläufig zur U-Bahn — finden Sie uns: eine kleine, persönlich geführte Kfz-Werkstatt. Was bei uns zählt, ist nicht das größte Logo an der Wand, sondern dass Ihr Auto wieder läuft. Schnell, fair und ohne Geschwätz.
+            </p>
+            <p>
+              {business.owner} führt den Betrieb selbst. Das bedeutet für Sie: Wenn Sie morgens vorbeikommen, sprechen Sie mit demjenigen, der Ihr Auto nachher auch tatsächlich auf die Hebebühne stellt. Keine Telefon-Hotline, keine Schicht-Wechsel, keine widersprüchlichen Informationen.
+            </p>
+            <p>
+              Was uns wichtig ist: Wir erklären, bevor wir reparieren. Sie wissen vorher, was es kostet — und was passieren würde, wenn man die Reparatur aufschiebt. So entscheiden Sie informiert. Genau das ist es, was Münchner Stammkunden seit Jahren bei uns schätzen — und warum unsere Google-Bewertungen aussehen, wie sie aussehen.
+            </p>
+          </div>
+        </div>
+
+        <aside class="lg:col-span-5">
+          <div class="sticky top-24 bg-[var(--color-bg-alt)] rounded-3xl p-7 md:p-8 border border-[var(--color-border)]">
+            <h3 class="text-sm font-semibold uppercase tracking-wider text-[var(--color-accent)] mb-4">Auf einen Blick</h3>
+            <dl class="space-y-4">
+              <div>
+                <dt class="text-sm text-[var(--color-text-muted)]">Inhaber</dt>
+                <dd class="text-lg font-bold text-[var(--color-text)]">{business.owner}</dd>
+              </div>
+              <div>
+                <dt class="text-sm text-[var(--color-text-muted)]">Standort</dt>
+                <dd class="text-lg font-semibold text-[var(--color-text)]">{business.street}<br/>{business.zip} {business.city}</dd>
+              </div>
+              <div>
+                <dt class="text-sm text-[var(--color-text-muted)]">Anfahrt</dt>
+                <dd class="text-base text-[var(--color-text)]">{business.transit}</dd>
+              </div>
+              <div>
+                <dt class="text-sm text-[var(--color-text-muted)]">Telefon</dt>
+                <dd>
+                  <a href={business.phoneHref} class="text-2xl font-bold text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-num">
+                    {business.phoneDisplay}
+                  </a>
+                </dd>
+              </div>
+            </dl>
+            <a href="/kontakt/" class="btn btn-accent w-full mt-6 justify-center">
+              Termin anfragen
+            </a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-14 md:py-20 bg-[var(--color-bg-alt)]">
+    <div class="container-x">
+      <div class="max-w-2xl mb-10 md:mb-14">
+        <span class="text-sm font-semibold text-[var(--color-accent)] uppercase tracking-wider">Unsere Werte</span>
+        <h2 class="text-3xl md:text-5xl font-bold mt-3 leading-tight">Warum Kunden uns vertrauen.</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+        {values.map((v) => (
+          <div class="bg-white rounded-2xl p-6 md:p-7 border border-[var(--color-border)]">
+            <div class="w-11 h-11 rounded-xl bg-[var(--color-accent-soft)] flex items-center justify-center mb-4">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F39239" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d={iconMap[v.icon]} />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold mb-2">{v.title}</h3>
+            <p class="text-[var(--color-text-muted)] leading-relaxed text-[15px]">{v.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Werkstatt-Beschreibung -->
+  <section class="py-14 md:py-20 bg-[var(--color-bg)]">
+    <div class="container-x">
+      <div class="max-w-3xl">
+        <span class="text-sm font-semibold text-[var(--color-accent)] uppercase tracking-wider">Die Werkstatt</span>
+        <h2 class="text-3xl md:text-4xl font-bold mt-3 mb-6 leading-tight">Modern ausgestattet, persönlich geführt.</h2>
+        <div class="space-y-5 text-lg text-[var(--color-text-muted)] leading-relaxed">
+          <p>
+            Unsere Werkstatt ist mit aktueller Diagnose- und Klima-Service-Technik ausgestattet — wir können Fehlerspeicher aller gängigen Marken auslesen, Sensoren und Steuergeräte anlernen und auch moderne Klimaanlagen mit R1234yf bedienen.
+          </p>
+          <p>
+            Gleichzeitig ist bei uns nichts „Massenabfertigung". Jedes Fahrzeug bekommt die Aufmerksamkeit, die es braucht. Wenn ein Teil günstiger zu reparieren statt zu tauschen ist, sagen wir es Ihnen — auch wenn wir damit weniger verdienen.
+          </p>
+          <p>
+            <strong>Sie können Ihren Wagen morgens abgeben</strong>, in die nahegelegene U-Bahn steigen und zur Arbeit fahren. Wir rufen Sie an, sobald wir den Fehler gefunden haben, und sprechen die Reparatur ab. Am Abend ist das Auto in vielen Fällen schon wieder fertig.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Reviews />
+  <CtaSection />
+</Layout>

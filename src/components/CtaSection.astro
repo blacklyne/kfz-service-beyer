@@ -1,0 +1,27 @@
+---
+import { business } from '../data/business';
+---
+
+<section class="bg-[var(--color-accent)] text-white py-16 md:py-24">
+  <div class="container-x text-center">
+    <h2 class="text-3xl md:text-5xl font-bold mb-4 leading-tight max-w-3xl mx-auto">
+      Termin? Ein Anruf genügt.
+    </h2>
+    <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
+      Mo bis Do von 7 bis 17 Uhr, Fr bis 12 Uhr. Persönlich erreichbar — ohne Warteschleife.
+    </p>
+    <a
+      href={business.phoneHref}
+      class="inline-flex items-center justify-center gap-3 bg-white text-[var(--color-accent)] hover:bg-[#2D2D2D] hover:text-white transition-colors text-2xl md:text-3xl font-bold px-8 py-5 md:px-12 md:py-7 rounded-2xl shadow-xl font-num"
+      aria-label={`Jetzt anrufen: ${business.phoneDisplay}`}
+    >
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      {business.phoneDisplay}
+    </a>
+    <p class="mt-6 text-white/85 text-sm">
+      {business.street} · {business.zip} {business.city}
+    </p>
+  </div>
+</section>

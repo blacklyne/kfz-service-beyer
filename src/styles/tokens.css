@@ -1,0 +1,35 @@
+/*
+  Farb-Tokens KFZ Service Beyer.
+  Basis: weiß. Logo-Farben (Orange + Anthrazit) als Akzent + Kontrast.
+*/
+
+:root {
+  /* Akzent (Logo-Orange) */
+  --color-accent: #F39239;
+  --color-accent-hover: #D87A23;
+  --color-accent-soft: #FDE8D3;
+
+  /* Anthrazit (Logo-Dark) — als Kontrast */
+  --color-dark: #2D2D2D;
+
+  /* Neutrale Töne */
+  --color-bg: #FFFFFF;          /* Body: pures Weiß */
+  --color-bg-alt: #F7F7F5;      /* Sehr helles Off-White für Section-Wechsel */
+  --color-bg-dark: #2D2D2D;     /* Anthrazit für Footer/Dark-Sections */
+
+  /* Text */
+  --color-text: #2D2D2D;        /* Headlines (Logo-Anthrazit) */
+  --color-text-muted: #555555;  /* Body */
+  --color-text-on-dark: #FFFFFF;
+  --color-text-on-dark-muted: #C8C8C2;
+
+  /* Borders */
+  --color-border: #EAEAE7;      /* Sehr dezent */
+  --color-border-strong: #D5D5D2;
+  --color-border-dark: #3D3D3D;
+
+  /* Maße */
+  --radius: 0.875rem;
+  --radius-lg: 1.25rem;
+  --container: 1180px;
+}

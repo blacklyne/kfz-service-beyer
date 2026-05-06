@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kfz-service-beyer.de/sitemap-index.xml

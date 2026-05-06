@@ -1,0 +1,79 @@
+---
+import { business } from '../data/business';
+
+const checks = [
+  `Inhabergeführt von ${business.owner}`,
+  'Fußläufig zur U-Bahn (Moosach / Neuhausen)',
+  'Faire Festpreise — vorab abgestimmt',
+  'Persönliche Beratung statt Standardabwicklung',
+  'Reparaturen oft in Rekordzeit',
+];
+---
+
+<section id="ueber-uns" class="py-16 md:py-28 bg-[var(--color-bg-alt)]">
+  <div class="container-x">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <div>
+        <span class="text-sm font-semibold text-[var(--color-accent)] uppercase tracking-wider">Über uns</span>
+        <h2 class="text-3xl md:text-5xl font-bold mt-3 mb-5 leading-tight">
+          Ihr Auto in guten Händen.
+        </h2>
+        <p class="text-lg text-[var(--color-text-muted)] leading-relaxed mb-5">
+          Kfz Service Beyer ist eine kleine, inhabergeführte Werkstatt in München.
+          Sie finden uns in der Waisenhausstraße 44 — direkt am Übergang zwischen Moosach und Neuhausen, fußläufig zur U-Bahn.
+        </p>
+        <p class="text-lg text-[var(--color-text-muted)] leading-relaxed mb-8">
+          {business.owner} führt den Betrieb persönlich. Das heißt für Sie: Sie sprechen mit dem, der das Auto auch tatsächlich repariert. Wir nehmen uns Zeit zu erklären, was nötig ist — und was nicht.
+        </p>
+
+        <ul class="space-y-3 mb-8">
+          {checks.map((c) => (
+            <li class="flex items-start gap-3">
+              <svg class="mt-1 flex-shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F39239" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12l5 5 9-11"/>
+              </svg>
+              <span class="text-[var(--color-text)] font-medium">{c}</span>
+            </li>
+          ))}
+        </ul>
+
+        <a href="/ueber-uns/" class="btn btn-outline">
+          Mehr über uns erfahren
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="relative">
+        <!-- Quote-Card statt externes Pexels-Bild — passt zu warm-persönlich -->
+        <div class="bg-white rounded-3xl p-8 md:p-10 border border-[var(--color-border)] shadow-sm">
+          <svg class="text-[var(--color-accent)] mb-5" width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M9 7c-3 0-5 2.5-5 6v6h6v-6H6c0-2 1-3 3-3V7zm10 0c-3 0-5 2.5-5 6v6h6v-6h-4c0-2 1-3 3-3V7z"/>
+          </svg>
+          <blockquote class="text-2xl md:text-3xl font-bold leading-snug text-[var(--color-text)] mb-6">
+            „Sie halten Wort und es gibt keine bösen Überraschungen — eine echte Seltenheit."
+          </blockquote>
+          <div class="flex items-center gap-3">
+            <span class="text-[var(--color-accent)] text-lg" aria-hidden="true">★★★★★</span>
+            <span class="text-sm text-[var(--color-text-muted)]">Google-Rezension</span>
+          </div>
+
+          <div class="mt-8 pt-8 border-t border-[var(--color-border)] grid grid-cols-2 gap-6">
+            <div>
+              <div class="text-3xl md:text-4xl font-bold text-[var(--color-text)] font-num">{business.google.stars}<span class="text-xl text-[var(--color-accent)]"> ★</span></div>
+              <div class="text-sm text-[var(--color-text-muted)] mt-1">aus {business.google.count} Google-Bewertungen</div>
+            </div>
+            <div>
+              <div class="text-3xl md:text-4xl font-bold text-[var(--color-text)]">100%</div>
+              <div class="text-sm text-[var(--color-text-muted)] mt-1">inhabergeführt</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 md:left-auto md:translate-x-0 md:-right-5 md:-bottom-5 bg-[var(--color-accent)] text-white px-5 py-3 rounded-xl shadow-xl">
+          <div class="text-sm font-semibold whitespace-nowrap">{business.street}</div>
+          <div class="text-xs opacity-90">{business.zip} {business.city}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

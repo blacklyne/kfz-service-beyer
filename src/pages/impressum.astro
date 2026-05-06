@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { business } from '../data/business';
+
+const title = 'Impressum · Kfz Service Beyer München';
+const description = `Impressum von ${business.name}, ${business.street}, ${business.zip} ${business.city}.`;
+---
+
+<Layout title={title} description={description} noBusinessSchema={true}>
+  <article class="container-x py-16 md:py-24 max-w-3xl">
+    <h1 class="text-4xl md:text-5xl font-bold mb-10">Impressum</h1>
+
+    <section class="prose-section">
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>
+        {business.name}<br/>
+        Inhaber: {business.owner} <span class="text-[var(--color-text-muted)]">[BITTE ERGÄNZEN: Vorname]</span><br/>
+        {business.street}<br/>
+        {business.zip} {business.city}
+      </p>
+      <p class="text-sm text-[var(--color-text-muted)]">
+        [BITTE ERGÄNZEN: Rechtsform — Einzelunternehmen, GbR, GmbH? Bei juristischen Personen: Vertretungsberechtigte und Handelsregister-Eintrag (Registergericht + HRB-Nummer).]
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: <a href={business.phoneHref} class="font-num">{business.phoneDisplay}</a><br/>
+        E-Mail: <a href={`mailto:${business.email}`}>{business.email}</a> <span class="text-[var(--color-text-muted)]">[BITTE ERGÄNZEN/PRÜFEN]</span>
+      </p>
+
+      <h2>Umsatzsteuer-ID</h2>
+      <p>
+        Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br/>
+        <span class="text-[var(--color-text-muted)]">[BITTE ERGÄNZEN: USt-ID, z. B. DE123456789]</span>
+      </p>
+
+      <h2>Berufsrechtliche Angaben</h2>
+      <p>
+        Berufsbezeichnung: Kraftfahrzeugtechniker-Meister <span class="text-[var(--color-text-muted)]">[BITTE PRÜFEN]</span><br/>
+        Verliehen in der Bundesrepublik Deutschland<br/>
+        Zuständige Kammer: Handwerkskammer für München und Oberbayern,<br/>
+        Max-Joseph-Straße 4, 80333 München<br/>
+        Es gelten folgende berufsrechtliche Regelungen: Handwerksordnung (HwO).<br/>
+        Einsehbar unter: <a href="https://www.gesetze-im-internet.de/hwo/" target="_blank" rel="noopener">gesetze-im-internet.de/hwo</a>
+      </p>
+      <p class="text-sm text-[var(--color-text-muted)]">
+        [BITTE ERGÄNZEN: Eintragung in die Handwerksrolle und Meisterbetrieb-Status durch den Inhaber bestätigen lassen.]
+      </p>
+
+      <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <p>
+        {business.owner}<br/>
+        {business.street}, {business.zip} {business.city}
+      </p>
+
+      <h2>Streitschlichtung</h2>
+      <p>
+        Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+        <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>.
+        Unsere E-Mail-Adresse finden Sie oben im Impressum.
+      </p>
+      <p>
+        Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+        Verbraucherschlichtungsstelle teilzunehmen.
+      </p>
+
+      <h2>Haftung für Inhalte</h2>
+      <p>
+        Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
+        nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
+        Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
+        Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
+        Tätigkeit hinweisen.
+      </p>
+      <p>
+        Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den
+        allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch
+        erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei
+        Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend
+        entfernen.
+      </p>
+
+      <h2>Haftung für Links</h2>
+      <p>
+        Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen
+        Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.
+        Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber
+        der Seiten verantwortlich.
+      </p>
+
+      <h2>Urheberrecht</h2>
+      <p>
+        Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen
+        dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art
+        der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen
+        Zustimmung des jeweiligen Autors bzw. Erstellers.
+      </p>
+    </section>
+
+    <p class="mt-12">
+      <a href="/" class="btn btn-outline">← Zurück zur Startseite</a>
+    </p>
+  </article>
+</Layout>

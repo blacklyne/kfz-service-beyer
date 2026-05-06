@@ -1,0 +1,166 @@
+---
+import { business } from '../data/business';
+
+const nav = [
+  { href: '/leistungen/', label: 'Leistungen' },
+  { href: '/ueber-uns/', label: 'Über uns' },
+  { href: '/kontakt/', label: 'Kontakt' },
+];
+
+const path = Astro.url.pathname;
+const isActive = (href: string) => {
+  if (href === '/') return path === '/';
+  return path === href || path === href.replace(/\/$/, '');
+};
+---
+
+<header
+  id="site-header"
+  class="fixed top-0 inset-x-0 z-50 transition-all duration-200"
+  data-header
+>
+  <div class="container-x flex items-center justify-between py-3 md:py-4">
+    <a href="/" class="flex items-center" aria-label={`${business.name} – Startseite`}>
+      <img src="/logo.svg" alt={`${business.name} München Logo`} class="h-9 md:h-11 w-auto" width="220" height="56" />
+    </a>
+
+    <nav class="hidden md:flex items-center gap-8" aria-label="Hauptnavigation">
+      {nav.map((item) => (
+        <a
+          href={item.href}
+          aria-current={isActive(item.href) ? 'page' : undefined}
+          class:list={[
+            'text-[15px] font-medium transition-colors',
+            isActive(item.href)
+              ? 'text-[var(--color-accent)]'
+              : 'text-[var(--color-text)] hover:text-[var(--color-accent)]',
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a
+        href={business.phoneHref}
+        class="btn btn-accent text-sm md:text-[15px] py-2.5 md:py-3 font-num"
+        aria-label={`Jetzt anrufen: ${business.phoneDisplay}`}
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z" />
+        </svg>
+        <span class="hidden sm:inline">{business.phoneDisplay}</span>
+        <span class="sm:hidden">Anrufen</span>
+      </a>
+      <button
+        type="button"
+        class="md:hidden p-2 rounded-md hover:bg-black/5"
+        aria-label="Menü öffnen"
+        data-burger
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <line x1="4" y1="7" x2="20" y2="7" />
+          <line x1="4" y1="12" x2="20" y2="12" />
+          <line x1="4" y1="17" x2="20" y2="17" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Slide-out -->
+  <div
+    class="md:hidden fixed inset-0 z-50 hidden"
+    data-mobile-menu
+    aria-hidden="true"
+  >
+    <div class="absolute inset-0 bg-black/40" data-mobile-overlay></div>
+    <div class="absolute right-0 top-0 h-full w-72 bg-white shadow-2xl p-6 flex flex-col">
+      <div class="flex justify-between items-center mb-8">
+        <img src="/logo.svg" alt={`${business.name} Logo`} class="h-8 w-auto" />
+        <button
+          type="button"
+          class="p-2"
+          aria-label="Menü schließen"
+          data-mobile-close
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+            <line x1="6" y1="6" x2="18" y2="18" />
+            <line x1="6" y1="18" x2="18" y2="6" />
+          </svg>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-1" aria-label="Mobile Navigation">
+        <a
+          href="/"
+          class:list={[
+            'px-2 py-3 text-lg font-medium border-b border-[var(--color-border)] hover:text-[var(--color-accent)]',
+            isActive('/') ? 'text-[var(--color-accent)]' : '',
+          ]}
+          data-mobile-link
+        >
+          Startseite
+        </a>
+        {nav.map((item) => (
+          <a
+            href={item.href}
+            aria-current={isActive(item.href) ? 'page' : undefined}
+            class:list={[
+              'px-2 py-3 text-lg font-medium border-b border-[var(--color-border)] hover:text-[var(--color-accent)]',
+              isActive(item.href) ? 'text-[var(--color-accent)]' : '',
+            ]}
+            data-mobile-link
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+      <a href={business.phoneHref} class="btn btn-accent mt-8 font-num">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z" />
+        </svg>
+        {business.phoneDisplay}
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- Spacer damit Inhalt nicht unter Header rutscht -->
+<div class="h-16 md:h-20"></div>
+
+<style>
+  header {
+    background: rgba(250, 250, 247, 0.0);
+  }
+  header[data-scrolled='true'] {
+    background: rgba(250, 250, 247, 0.92);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  }
+</style>
+
+<script>
+  const header = document.querySelector('[data-header]') as HTMLElement | null;
+  const onScroll = () => {
+    if (!header) return;
+    if (window.scrollY > 30) header.dataset.scrolled = 'true';
+    else header.removeAttribute('data-scrolled');
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const burger = document.querySelector('[data-burger]');
+  const menu = document.querySelector('[data-mobile-menu]') as HTMLElement | null;
+  const overlay = document.querySelector('[data-mobile-overlay]');
+  const close = document.querySelector('[data-mobile-close]');
+  const links = document.querySelectorAll('[data-mobile-link]');
+
+  const open = () => menu?.classList.remove('hidden');
+  const hide = () => menu?.classList.add('hidden');
+
+  burger?.addEventListener('click', open);
+  overlay?.addEventListener('click', hide);
+  close?.addEventListener('click', hide);
+  links.forEach((l) => l.addEventListener('click', hide));
+</script>

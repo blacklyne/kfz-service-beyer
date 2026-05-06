@@ -1,0 +1,65 @@
+---
+import { business } from '../data/business';
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-[var(--color-bg-dark)] text-white pt-14 pb-8 mt-0">
+  <div class="container-x">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-2">
+        <img src="/logo-light.svg" alt={`${business.name} München Logo`} class="h-11 w-auto mb-5" width="220" height="56" />
+        <p class="text-white/70 leading-relaxed text-sm max-w-md">
+          Inhabergeführte KFZ-Werkstatt in München. Inspektion, Reparatur und TÜV — fair, transparent und persönlich. Ihre Werkstatt seit Jahren am Übergang Moosach / Neuhausen.
+        </p>
+        <div class="mt-5 flex flex-wrap items-center gap-3 text-sm">
+          <span class="inline-flex items-center gap-1.5 text-white/85">
+            <span class="text-[var(--color-accent)]">★★★★★</span>
+            <span class="font-semibold">{business.google.stars}</span>
+            <span class="text-white/60">· {business.google.count} Google-Bewertungen</span>
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-white/90">Navigation</h4>
+        <ul class="space-y-2 text-white/70 text-sm">
+          <li><a href="/" class="hover:text-white transition-colors">Startseite</a></li>
+          <li><a href="/leistungen/" class="hover:text-white transition-colors">Leistungen</a></li>
+          <li><a href="/ueber-uns/" class="hover:text-white transition-colors">Über uns</a></li>
+          <li><a href="/kontakt/" class="hover:text-white transition-colors">Kontakt</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4 text-white/90">Kontakt</h4>
+        <ul class="space-y-2 text-white/70 text-sm">
+          <li>{business.street}</li>
+          <li>{business.zip} {business.city}</li>
+          <li class="pt-2">
+            <a href={business.phoneHref} class="text-white font-semibold hover:text-[var(--color-accent)] font-num transition-colors">
+              {business.phoneDisplay}
+            </a>
+          </li>
+          <li><a href={`mailto:${business.email}`} class="hover:text-white transition-colors break-all">{business.email}</a></li>
+        </ul>
+        <h4 class="text-sm font-semibold uppercase tracking-wider mt-6 mb-3 text-white/90">Öffnungszeiten</h4>
+        <ul class="space-y-1 text-white/70 text-sm">
+          {business.hoursCompact.map((h) => (
+            <li class="flex justify-between gap-3 max-w-[180px]">
+              <span>{h.d}</span>
+              <span class="text-white/85 font-num">{h.t}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-[var(--color-border-dark)] flex flex-col md:flex-row justify-between gap-3 text-sm text-white/50">
+      <div>© {year} {business.name} · Inh. {business.owner}</div>
+      <div class="flex gap-6">
+        <a href="/impressum/" class="hover:text-white transition-colors">Impressum</a>
+        <a href="/datenschutz/" class="hover:text-white transition-colors">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>

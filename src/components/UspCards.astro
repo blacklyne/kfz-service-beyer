@@ -1,0 +1,50 @@
+---
+import { business } from '../data/business';
+
+const usps = [
+  {
+    icon: 'user',
+    title: 'Inhabergeführt',
+    text: `${business.owner} steht selbst in der Werkstatt. Sie sprechen direkt mit dem, der Ihr Auto auch wirklich repariert — kein Callcenter, keine Sachbearbeiter-Schleife.`,
+  },
+  {
+    icon: 'tag',
+    title: 'Faire Festpreise',
+    text: 'Sie bekommen vorab einen klaren Kostenvoranschlag. Wir reden über Geld, bevor wir das Auto anfassen — keine bösen Überraschungen auf der Rechnung.',
+  },
+  {
+    icon: 'train',
+    title: 'Direkt an der U-Bahn',
+    text: 'Wagen abgeben, in die U-Bahn einsteigen, weiter zur Arbeit. Wir liegen am Übergang Moosach / Neuhausen — perfekt erreichbar mit ÖPNV oder Auto.',
+  },
+];
+---
+
+<section class="bg-[var(--color-bg-alt)] py-16 md:py-24">
+  <div class="container-x">
+    <div class="max-w-2xl mb-10 md:mb-12">
+      <span class="text-sm font-semibold text-[var(--color-accent)] uppercase tracking-wider">Warum Beyer</span>
+      <h2 class="text-3xl md:text-5xl font-bold mt-3 leading-tight">Vertrauen, das Sie spüren.</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+      {usps.map((u) => (
+        <div class="bg-white rounded-2xl p-7 md:p-8 border border-[var(--color-border)]">
+          <div class="w-12 h-12 rounded-xl bg-[var(--color-accent-soft)] flex items-center justify-center mb-5">
+            {u.icon === 'user' && (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F39239" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+            )}
+            {u.icon === 'tag' && (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F39239" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12l9-9h7v7l-9 9z"/><circle cx="15" cy="9" r="1.2" fill="#F39239"/></svg>
+            )}
+            {u.icon === 'train' && (
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F39239" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14" r="1" fill="#F39239"/><circle cx="15" cy="14" r="1" fill="#F39239"/><path d="M8 17l-2 4M16 17l2 4"/></svg>
+            )}
+          </div>
+          <h3 class="text-xl font-bold mb-2">{u.title}</h3>
+          <p class="text-[var(--color-text-muted)] leading-relaxed">{u.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
