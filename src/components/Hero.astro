@@ -20,9 +20,8 @@ const heroImgAlt = 'Mechaniker bei der Arbeit an einem Motor in der Kfz-Werkstat
     height="1280"
   />
 
-  <!-- Dark Overlay für Text-Lesbarkeit -->
-  <div class="absolute inset-0 bg-gradient-to-r from-[var(--color-dark)]/85 via-[var(--color-dark)]/65 to-[var(--color-dark)]/30"></div>
-  <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-dark)]/40 to-transparent"></div>
+  <!-- Dark Overlay für Text-Lesbarkeit (verstärkt + text-shadow) -->
+  <div class="absolute inset-0 hero-overlay"></div>
 
   <div class="container-x relative z-10 pt-28 md:pt-36 pb-16 md:pb-24 w-full">
     <div class="max-w-3xl">
@@ -35,12 +34,12 @@ const heroImgAlt = 'Mechaniker bei der Arbeit an einem Motor in der Kfz-Werkstat
         KFZ-Werkstatt München · Heute geöffnet
       </div>
 
-      <h1 class="text-[40px] sm:text-5xl md:text-6xl lg:text-[72px] leading-[1.04] mb-6 text-white">
+      <h1 class="text-[40px] sm:text-5xl md:text-6xl lg:text-[72px] leading-[1.04] mb-6 text-white hero-text-shadow">
         Ihre Werkstatt im<br />
-        <span class="text-[var(--color-accent)]">Herzen Münchens.</span>
+        Herzen Münchens.
       </h1>
 
-      <p class="text-lg md:text-xl text-white/85 max-w-2xl mb-8 leading-relaxed">
+      <p class="text-lg md:text-xl text-white/90 max-w-2xl mb-8 leading-relaxed hero-text-shadow">
         Inspektion, Reparatur und TÜV - ehrlich, fair und persönlich. Bei uns bekommen Sie keine bösen Überraschungen, sondern transparente Beratung und Reparaturen in Rekordzeit.
       </p>
 
