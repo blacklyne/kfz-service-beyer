@@ -58,23 +58,24 @@ const checks = [
             width="1200"
             height="1500"
           />
-          <!-- Anthrazit-Verlauf unten für Text-Lesbarkeit -->
-          <div class="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[var(--color-dark)]/90 via-[var(--color-dark)]/40 to-transparent"></div>
+        </div>
 
-          <!-- Quote-Overlay unten -->
-          <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
-            <svg class="text-[var(--color-accent)] mb-3" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M9 7c-3 0-5 2.5-5 6v6h6v-6H6c0-2 1-3 3-3V7zm10 0c-3 0-5 2.5-5 6v6h6v-6h-4c0-2 1-3 3-3V7z"/>
-            </svg>
-            <blockquote class="text-lg md:text-xl font-semibold leading-snug mb-2">
-              „Sie halten Wort - keine bösen Überraschungen."
-            </blockquote>
-            <div class="text-xs text-white/75">Google-Rezension · ★★★★★</div>
+        <!-- Floating Quote-Card unten rechts: ersetzt das Overlay-im-Bild -->
+        <div class="hidden md:block absolute -right-5 -bottom-5 max-w-[280px] bg-white rounded-2xl shadow-xl border border-[var(--color-border)] p-5">
+          <svg class="text-[var(--color-accent)] mb-2" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M9 7c-3 0-5 2.5-5 6v6h6v-6H6c0-2 1-3 3-3V7zm10 0c-3 0-5 2.5-5 6v6h6v-6h-4c0-2 1-3 3-3V7z"/>
+          </svg>
+          <blockquote class="text-sm font-semibold leading-snug text-[var(--color-text)] mb-2">
+            „Sie halten Wort - keine bösen Überraschungen."
+          </blockquote>
+          <div class="text-xs text-[var(--color-text-muted)] flex items-center gap-1.5">
+            <span class="text-[var(--color-accent)]">★★★★★</span>
+            <span>Google-Rezension</span>
           </div>
         </div>
 
-        <!-- Floating Stats-Card unten links -->
-        <div class="hidden md:flex absolute -left-5 -bottom-5 bg-white rounded-2xl shadow-xl border border-[var(--color-border)] px-5 py-4 items-center gap-4">
+        <!-- Floating Stats-Card oben links -->
+        <div class="hidden md:flex absolute -left-5 -top-5 bg-white rounded-2xl shadow-xl border border-[var(--color-border)] px-5 py-4 items-center gap-4">
           <div class="w-12 h-12 rounded-xl bg-[var(--color-accent-soft)] flex items-center justify-center flex-shrink-0">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="#F39239" aria-hidden="true">
               <path d="M12 2l3 7h7l-5.5 4 2 7-6.5-4.5L5.5 20l2-7L2 9h7z"/>
@@ -84,12 +85,6 @@ const checks = [
             <div class="text-2xl font-bold leading-none font-num">{business.google.stars}<span class="text-base text-[var(--color-accent)]"> / 5</span></div>
             <div class="text-xs text-[var(--color-text-muted)] mt-1">{business.google.count} Bewertungen</div>
           </div>
-        </div>
-
-        <!-- Floating Address-Tag oben rechts -->
-        <div class="hidden md:flex absolute -right-3 -top-3 bg-[var(--color-accent)] text-white rounded-xl shadow-xl px-4 py-3 items-center gap-2">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div class="text-sm font-semibold leading-tight">Waisenhausstr. 44</div>
         </div>
       </div>
     </div>

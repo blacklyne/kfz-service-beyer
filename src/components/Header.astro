@@ -129,14 +129,16 @@ const isActive = (href: string) => {
 <div class="h-16 md:h-20"></div>
 
 <style>
+  /* Header: immer mit Glas-Background - funktioniert über dunklem Hero und hellen Pages */
   header {
-    background: rgba(250, 250, 247, 0.0);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: saturate(180%) blur(14px);
+    -webkit-backdrop-filter: saturate(180%) blur(14px);
+    transition: box-shadow 0.2s, background-color 0.2s;
   }
   header[data-scrolled='true'] {
-    background: rgba(250, 250, 247, 0.92);
-    backdrop-filter: saturate(180%) blur(12px);
-    -webkit-backdrop-filter: saturate(180%) blur(12px);
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06), 0 4px 16px -8px rgba(0, 0, 0, 0.08);
   }
 </style>
 
