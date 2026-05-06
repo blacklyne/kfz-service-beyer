@@ -1,4 +1,4 @@
-# Kfz Service Beyer — Webseite
+# Kfz Service Beyer - Webseite
 
 Mehrseitige Webseite für die inhabergeführte Kfz-Werkstatt **Beyer** in München (Waisenhausstraße 44).
 Astro 6 + Tailwind v4, statisch generiert, deploybar auf Cloudflare Pages, Netlify, GitHub Pages o. ä.
@@ -22,7 +22,7 @@ npm run preview      # gebaute Site lokal anschauen
 ## Seitenstruktur
 
 ```
-/                  Startseite – Hero, Trust, Leistungen-Preview,
+/                  Startseite - Hero, Trust, Leistungen-Preview,
                    Reviews, Werkstatt-Story, Map + Telefon-CTA
 /leistungen        Alle Services im Detail (8 Leistungen mit
                    Beschreibung + Bullets)
@@ -43,7 +43,7 @@ sind **zentral** in einer einzigen Datei gepflegt:
 src/data/business.ts
 ```
 
-Wer Texte ändert, ändert sie hier — und sie tauchen automatisch im Header, Footer, Hero,
+Wer Texte ändert, ändert sie hier - und sie tauchen automatisch im Header, Footer, Hero,
 Schema.org-JSON-LD, Impressum und Datenschutz auf.
 
 ### Was wo geändert wird
@@ -72,7 +72,7 @@ Die Impressum-Seite enthält bewusst Platzhalter mit `[BITTE ERGÄNZEN: …]`. D
 | Wo (in [`src/pages/impressum.astro`](src/pages/impressum.astro)) | Was |
 |---|---|
 | § 5 TMG | Vorname von Herrn Beyer |
-| § 5 TMG | Rechtsform — Einzelunternehmen / GbR / GmbH? Bei GmbH zusätzlich Handelsregister + HRB |
+| § 5 TMG | Rechtsform - Einzelunternehmen / GbR / GmbH? Bei GmbH zusätzlich Handelsregister + HRB |
 | Kontakt | E-Mail-Adresse prüfen (aktuell `info@kfz-service-beyer.de` als Annahme) |
 | USt-ID | Umsatzsteuer-Identifikationsnummer (z. B. DE123456789) |
 | Berufsrechtliche Angaben | Eintragung in der Handwerksrolle / Meisterbetrieb-Status |
@@ -91,7 +91,7 @@ Formular-Endpoint hinterlegt ist. Sobald der Kunde einen [Formspree](https://for
 
 1. In [`src/pages/kontakt.astro`](src/pages/kontakt.astro) den Wert `[FORMSPREE_URL]`
    (Variable `formAction`) durch die echte URL ersetzen.
-2. Das eingebettete Inline-`<script>` greift nur, wenn die URL noch der Platzhalter ist —
+2. Das eingebettete Inline-`<script>` greift nur, wenn die URL noch der Platzhalter ist -
    es kann also stehen bleiben (Fallback bleibt aktiv) oder entfernt werden.
 3. Datenschutzerklärung Punkt 6 entsprechend ergänzen.
 
@@ -104,7 +104,7 @@ Spam-Schutz: Honeypot-Feld `_gotcha` ist aktiv. Pflicht-Checkbox bei Datenschutz
 - Pro Seite eigene `<title>` + `<meta description>` (im Page-Frontmatter)
 - Open Graph + Twitter Cards
 - **Schema.org JSON-LD**:
-  - `AutoRepair` (Subtype von `LocalBusiness`) auf jeder Seite — mit `aggregateRating`,
+  - `AutoRepair` (Subtype von `LocalBusiness`) auf jeder Seite - mit `aggregateRating`,
     `openingHoursSpecification`, `geo` und `hasOfferCatalog`.
   - `ItemList` der Services zusätzlich auf `/leistungen`.
 - `sitemap-index.xml` + `sitemap-0.xml` automatisch via `@astrojs/sitemap`
@@ -128,7 +128,7 @@ Spam-Schutz: Honeypot-Feld `_gotcha` ist aktiv. Pflicht-Checkbox bei Datenschutz
 
 ### Netlify / Vercel / GitHub Pages
 
-`dist/` ist eine reine statische Ausgabe — funktioniert auf jedem Static-Host.
+`dist/` ist eine reine statische Ausgabe - funktioniert auf jedem Static-Host.
 
 ---
 
@@ -175,11 +175,11 @@ public/
 
 ## Tech-Stack
 
-- **Astro 6** — statisch, HTML-first, kein JS-Overhead außer einem kleinen Header-Skript
-- **Tailwind CSS v4.1** — via `@tailwindcss/vite`
+- **Astro 6** - statisch, HTML-first, kein JS-Overhead außer einem kleinen Header-Skript
+- **Tailwind CSS v4.1** - via `@tailwindcss/vite`
 - **TypeScript strict**
-- **@astrojs/sitemap** — automatische Sitemap-Generation
-- Schriften via Google Fonts (Inter + Manrope) — beim Live-Gang ggf. selbst hosten,
+- **@astrojs/sitemap** - automatische Sitemap-Generation
+- Schriften via Google Fonts (Inter + Manrope) - beim Live-Gang ggf. selbst hosten,
   falls Cookie-Banner-frei gewünscht.
 
 ---

@@ -10,14 +10,14 @@ interface Props {
   description: string;
   ogImage?: string;
   /** Falls true, wird kein lokaler 'mainEntity'-Schema-Block ausgegeben.
-   * Standard: false – jede Seite hat den Business-Schema-Block. */
+   * Standard: false - jede Seite hat den Business-Schema-Block. */
   noBusinessSchema?: boolean;
 }
 
 const { title, description, ogImage = '/og-default.svg', noBusinessSchema = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 
-// Schema.org: AutoRepair (Subtype von LocalBusiness) — präziser für Werkstätten.
+// Schema.org: AutoRepair (Subtype von LocalBusiness) - präziser für Werkstätten.
 const businessSchema = {
   '@context': 'https://schema.org',
   '@type': 'AutoRepair',

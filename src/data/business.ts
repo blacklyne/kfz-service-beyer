@@ -23,17 +23,17 @@ export const business = {
   // Google Maps Koordinaten (aus Brief)
   geo: { lat: 48.1617692, lng: 11.5295949 },
   hours: [
-    { d: 'Montag',     t: '07:00 – 17:00', dayKey: 'Mo' },
-    { d: 'Dienstag',   t: '07:00 – 17:00', dayKey: 'Tu' },
-    { d: 'Mittwoch',   t: '07:00 – 17:00', dayKey: 'We' },
-    { d: 'Donnerstag', t: '07:00 – 17:00', dayKey: 'Th' },
-    { d: 'Freitag',    t: '07:00 – 12:00', dayKey: 'Fr' },
+    { d: 'Montag',     t: '07:00 - 17:00', dayKey: 'Mo' },
+    { d: 'Dienstag',   t: '07:00 - 17:00', dayKey: 'Tu' },
+    { d: 'Mittwoch',   t: '07:00 - 17:00', dayKey: 'We' },
+    { d: 'Donnerstag', t: '07:00 - 17:00', dayKey: 'Th' },
+    { d: 'Freitag',    t: '07:00 - 12:00', dayKey: 'Fr' },
     { d: 'Samstag',    t: 'Geschlossen',   dayKey: 'Sa' },
     { d: 'Sonntag',    t: 'Geschlossen',   dayKey: 'Su' },
   ],
   hoursCompact: [
-    { d: 'Mo – Do', t: '07:00 – 17:00' },
-    { d: 'Fr',      t: '07:00 – 12:00' },
+    { d: 'Mo - Do', t: '07:00 - 17:00' },
+    { d: 'Fr',      t: '07:00 - 12:00' },
     { d: 'Sa / So', t: 'Geschlossen' },
   ],
   // Schema.org openingHoursSpecification
@@ -41,7 +41,7 @@ export const business = {
     { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], opens: '07:00', closes: '17:00' },
     { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '07:00', closes: '12:00' },
   ],
-  transit: 'Fußläufig zur U-Bahn — am Übergang Moosach / Neuhausen.',
+  transit: 'Fußläufig zur U-Bahn - am Übergang Moosach / Neuhausen.',
   mapsEmbed:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.4!2d11.5295949!3d48.1617692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e76405354b9c9%3A0x734e7b8a33c2ef3f!2sKfz%20Service%20Beyer!5e0!3m2!1sde!2sde!4v1700000000',
   mapsLink:
@@ -67,10 +67,10 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: 'hu-au',
-    title: 'HU / AU – Hauptuntersuchung',
-    short: 'TÜV-Termin direkt bei uns – inkl. Vorab-Check und Mängelbehebung.',
+    title: 'HU / AU - Hauptuntersuchung',
+    short: 'TÜV-Termin direkt bei uns - inkl. Vorab-Check und Mängelbehebung.',
     description:
-      'Wir prüfen Ihr Fahrzeug vor der Hauptuntersuchung sorgfältig auf alle prüfrelevanten Punkte und beheben kleine Mängel direkt. Den HU/AU-Termin organisieren wir gemeinsam mit einem unabhängigen Prüforganisation – bequem in einem Werkstattbesuch.',
+      'Wir prüfen Ihr Fahrzeug vor der Hauptuntersuchung sorgfältig auf alle prüfrelevanten Punkte und beheben kleine Mängel direkt. Den HU/AU-Termin organisieren wir gemeinsam mit einem unabhängigen Prüforganisation - bequem in einem Werkstattbesuch.',
     bullets: [
       'Vorab-Check aller HU-relevanten Punkte',
       'Sofortige Mängelbeseitigung möglich',
@@ -82,9 +82,9 @@ export const services: Service[] = [
   {
     slug: 'inspektion-wartung',
     title: 'Inspektion & Wartung',
-    short: 'Nach Herstellervorgabe – mit Stempel im Scheckheft.',
+    short: 'Nach Herstellervorgabe - mit Stempel im Scheckheft.',
     description:
-      'Wir warten Ihr Fahrzeug nach den Vorgaben des Herstellers – egal ob Klein-, Mittel- oder Oberklasse. Sie behalten Ihren Garantieanspruch und einen lückenlosen Scheckheft-Eintrag. Transparent erklären wir, was tatsächlich nötig ist – und was warten kann.',
+      'Wir warten Ihr Fahrzeug nach den Vorgaben des Herstellers - egal ob Klein-, Mittel- oder Oberklasse. Sie behalten Ihren Garantieanspruch und einen lückenlosen Scheckheft-Eintrag. Transparent erklären wir, was tatsächlich nötig ist - und was warten kann.',
     bullets: [
       'Service nach Herstellervorgabe',
       'Eintrag ins digitale & klassische Scheckheft',
@@ -96,9 +96,9 @@ export const services: Service[] = [
   {
     slug: 'bremsen',
     title: 'Bremsen-Service',
-    short: 'Beläge, Scheiben, Bremsflüssigkeit – sicher unterwegs.',
+    short: 'Beläge, Scheiben, Bremsflüssigkeit - sicher unterwegs.',
     description:
-      'Quietschen, Vibrieren, längerer Bremsweg? Wir prüfen Ihre Bremsanlage komplett – Beläge, Scheiben, Trommeln, Sättel und Flüssigkeit – und tauschen, was nötig ist. Auf Wunsch verwenden wir Original- oder geprüfte Markenteile.',
+      'Quietschen, Vibrieren, längerer Bremsweg? Wir prüfen Ihre Bremsanlage komplett - Beläge, Scheiben, Trommeln, Sättel und Flüssigkeit - und tauschen, was nötig ist. Auf Wunsch verwenden wir Original- oder geprüfte Markenteile.',
     bullets: [
       'Bremsbeläge & Scheiben aller Achsen',
       'Bremsflüssigkeit nach Herstellervorgabe',
@@ -110,9 +110,9 @@ export const services: Service[] = [
   {
     slug: 'reifen',
     title: 'Reifenservice & Einlagerung',
-    short: 'Wechsel, Auswuchten, Einlagern – saisonal oder spontan.',
+    short: 'Wechsel, Auswuchten, Einlagern - saisonal oder spontan.',
     description:
-      'Reifenwechsel mit Auswuchten und Druckkontrolle. Auf Wunsch lagern wir Ihre Sommer- oder Winterreifen fachgerecht bei uns ein – Sie kommen einfach zum Termin, und wir haben Ihre Reifen schon bereit.',
+      'Reifenwechsel mit Auswuchten und Druckkontrolle. Auf Wunsch lagern wir Ihre Sommer- oder Winterreifen fachgerecht bei uns ein - Sie kommen einfach zum Termin, und wir haben Ihre Reifen schon bereit.',
     bullets: [
       'Wechsel inkl. Auswuchten',
       'Reifenmontage auf neuen Felgen',
@@ -124,7 +124,7 @@ export const services: Service[] = [
   {
     slug: 'klima',
     title: 'Klimaanlagen-Service',
-    short: 'Befüllen, Desinfektion, Reparatur – im Sommer wieder kühl.',
+    short: 'Befüllen, Desinfektion, Reparatur - im Sommer wieder kühl.',
     description:
       'Wir prüfen Ihre Klimaanlage auf Dichtheit, befüllen Kältemittel und Öl nach Herstellervorgabe und tauschen den Innenraumfilter. Modernste Geräte für R134a- und R1234yf-Anlagen sind bei uns Standard.',
     bullets: [
@@ -138,9 +138,9 @@ export const services: Service[] = [
   {
     slug: 'elektrik-diagnose',
     title: 'Elektrik & Diagnose',
-    short: 'Fehlerspeicher, Steuergeräte, Sensoren – wir lesen aus.',
+    short: 'Fehlerspeicher, Steuergeräte, Sensoren - wir lesen aus.',
     description:
-      'Leuchtet eine Warnlampe? Wir lesen den Fehlerspeicher mit professionellen Diagnosegeräten aus, finden die Ursache und beheben sie – statt einfach den Speicher zu löschen. Auch bei modernen Assistenzsystemen.',
+      'Leuchtet eine Warnlampe? Wir lesen den Fehlerspeicher mit professionellen Diagnosegeräten aus, finden die Ursache und beheben sie - statt einfach den Speicher zu löschen. Auch bei modernen Assistenzsystemen.',
     bullets: [
       'Fehlerspeicher auslesen (alle Marken)',
       'Sensoren, Steuergeräte, Verkabelung',
@@ -152,7 +152,7 @@ export const services: Service[] = [
   {
     slug: 'oelwechsel',
     title: 'Ölwechsel & Verschleiß',
-    short: 'Öl, Filter, Zündkerzen – alles was regelmäßig fällig wird.',
+    short: 'Öl, Filter, Zündkerzen - alles was regelmäßig fällig wird.',
     description:
       'Schnell und ohne Termin (sofern wir Zeit haben): Ölwechsel mit passendem Öl nach Herstellerfreigabe, neuer Ölfilter, dazu Luft-, Innenraum- und Kraftstofffilter. Bei Bedarf auch Zündkerzen und Wischer.',
     bullets: [
@@ -166,9 +166,9 @@ export const services: Service[] = [
   {
     slug: 'achsvermessung',
     title: 'Achsvermessung',
-    short: 'Spur korrekt eingestellt – Reifen halten länger.',
+    short: 'Spur korrekt eingestellt - Reifen halten länger.',
     description:
-      'Ungleicher Reifenverschleiß oder Lenkrad schief? Mit einer präzisen Achsvermessung stellen wir Spur und Sturz korrekt ein. Das Auto fährt wieder ruhig, der Verbrauch sinkt – und neue Reifen halten deutlich länger.',
+      'Ungleicher Reifenverschleiß oder Lenkrad schief? Mit einer präzisen Achsvermessung stellen wir Spur und Sturz korrekt ein. Das Auto fährt wieder ruhig, der Verbrauch sinkt - und neue Reifen halten deutlich länger.',
     bullets: [
       'Computer-Achsvermessung beider Achsen',
       'Spur- und Sturz-Einstellung',
@@ -199,7 +199,7 @@ export const reviews = [
     name: 'Google-Kunde',
     stars: 5,
     text:
-      'Sie halten Wort und es gibt keine bösen Überraschungen — eine echte Seltenheit.',
+      'Sie halten Wort und es gibt keine bösen Überraschungen - eine echte Seltenheit.',
     source: 'Google Rezension',
   },
   {
