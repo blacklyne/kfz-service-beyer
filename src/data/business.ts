@@ -15,8 +15,7 @@ export const business = {
   phone: '+49 89 155072',
   phoneHref: 'tel:+4989155072',
   phoneDisplay: '089 155072',
-  // [BITTE ERGÄNZEN] vom Inhaber liefern lassen
-  email: 'info@kfz-service-beyer.de',
+  email: 'info@kfzbeyer.com',
   street: 'Waisenhausstraße 44',
   zip: '80637',
   city: 'München',
