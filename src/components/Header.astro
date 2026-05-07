@@ -68,73 +68,74 @@ const isActive = (href: string) => {
     </div>
   </div>
 
-  <!-- Mobile Menu: Full-Screen mit komplett hellem Hintergrund -->
-  <div
-    class="md:hidden fixed inset-0 z-[60] hidden bg-white"
-    data-mobile-menu
-    aria-hidden="true"
-  >
-    <div class="h-full flex flex-col p-6">
-      <div class="flex justify-between items-center mb-8">
-        <img src="/logo.svg" alt={`${business.name} Logo`} class="h-9 w-auto" />
-        <button
-          type="button"
-          class="p-2 rounded-md hover:bg-black/5 text-[var(--color-text)]"
-          aria-label="Menü schließen"
-          data-mobile-close
-        >
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
-            <line x1="6" y1="6" x2="18" y2="18" />
-            <line x1="6" y1="18" x2="18" y2="6" />
-          </svg>
-        </button>
-      </div>
-      <nav class="flex flex-col gap-1" aria-label="Mobile Navigation">
-        <a
-          href="/"
-          class:list={[
-            'px-2 py-4 text-xl font-semibold border-b border-[var(--color-border)] transition-colors hover:text-[var(--color-accent)]',
-            isActive('/') ? 'text-[var(--color-accent)]' : 'text-[var(--color-text)]',
-          ]}
-          data-mobile-link
-        >
-          Startseite
-        </a>
-        {nav.map((item) => (
-          <a
-            href={item.href}
-            aria-current={isActive(item.href) ? 'page' : undefined}
-            class:list={[
-              'px-2 py-4 text-xl font-semibold border-b border-[var(--color-border)] transition-colors hover:text-[var(--color-accent)]',
-              isActive(item.href) ? 'text-[var(--color-accent)]' : 'text-[var(--color-text)]',
-            ]}
-            data-mobile-link
-          >
-            {item.label}
-          </a>
-        ))}
-      </nav>
-      <div class="mt-auto pt-8 space-y-3">
-        <a href={business.phoneHref} class="btn btn-accent w-full font-num text-lg py-4">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z" />
-          </svg>
-          {business.phoneDisplay}
-        </a>
-        <a href={`mailto:${business.email}`} class="btn btn-outline w-full text-lg py-4">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="2" y="4" width="20" height="16" rx="2"/>
-            <path d="M2 7l10 7 10-7"/>
-          </svg>
-          E-Mail schreiben
-        </a>
-      </div>
-    </div>
-  </div>
 </header>
 
 <!-- Spacer damit Inhalt nicht unter Header rutscht -->
 <div class="h-16 md:h-20"></div>
+
+<!-- Mobile Menu: AUSSERHALB <header> (Header hat backdrop-filter, das würde fixed-children einsperren) -->
+<div
+  class="md:hidden fixed inset-0 z-[70] hidden bg-white"
+  data-mobile-menu
+  aria-hidden="true"
+>
+  <div class="h-full w-full flex flex-col p-6 bg-white">
+    <div class="flex justify-between items-center mb-8">
+      <img src="/logo.svg" alt={`${business.name} Logo`} class="h-9 w-auto" />
+      <button
+        type="button"
+        class="p-2 rounded-md hover:bg-black/5 text-[var(--color-text)]"
+        aria-label="Menü schließen"
+        data-mobile-close
+      >
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true">
+          <line x1="6" y1="6" x2="18" y2="18" />
+          <line x1="6" y1="18" x2="18" y2="6" />
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-1" aria-label="Mobile Navigation">
+      <a
+        href="/"
+        class:list={[
+          'px-2 py-4 text-xl font-semibold border-b border-[var(--color-border)] transition-colors hover:text-[var(--color-accent)]',
+          isActive('/') ? 'text-[var(--color-accent)]' : 'text-[var(--color-text)]',
+        ]}
+        data-mobile-link
+      >
+        Startseite
+      </a>
+      {nav.map((item) => (
+        <a
+          href={item.href}
+          aria-current={isActive(item.href) ? 'page' : undefined}
+          class:list={[
+            'px-2 py-4 text-xl font-semibold border-b border-[var(--color-border)] transition-colors hover:text-[var(--color-accent)]',
+            isActive(item.href) ? 'text-[var(--color-accent)]' : 'text-[var(--color-text)]',
+          ]}
+          data-mobile-link
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+    <div class="mt-auto pt-8 space-y-3">
+      <a href={business.phoneHref} class="btn btn-accent w-full font-num text-lg py-4">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z" />
+        </svg>
+        {business.phoneDisplay}
+      </a>
+      <a href={`mailto:${business.email}`} class="btn btn-outline w-full text-lg py-4">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="4" width="20" height="16" rx="2"/>
+          <path d="M2 7l10 7 10-7"/>
+        </svg>
+        E-Mail schreiben
+      </a>
+    </div>
+  </div>
+</div>
 
 <style>
   /* Header: immer mit Glas-Background - funktioniert über dunklem Hero und hellen Pages */
