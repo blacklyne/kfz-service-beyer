@@ -2,12 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import { business } from '../data/business';
 
-const title = 'Kontakt · Kfz Service Beyer München - Termin anfragen';
+const title = 'Kontakt · Kfz Service Beyer München-Gern - Termin per Telefon oder E-Mail';
 const description =
-  'Termin anfragen oder Anfahrt zur Kfz-Werkstatt Beyer in München. Waisenhausstraße 44, fußläufig zur U-Bahn. Telefon ' + business.phoneDisplay + '.';
+  'Termin vereinbaren bei Kfz Service Beyer im Stadtteil Gern, München. Direkt an der U-Bahn-Haltestelle Gern (U1). Telefonisch unter ' + business.phoneDisplay + ' oder per E-Mail.';
 
-// Formspree-Endpoint - vor Live-Schalten ersetzen.
-const formAction = '[FORMSPREE_URL]';
 const mapEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(business.street + ', ' + business.zip + ' ' + business.city)}&t=&z=16&ie=UTF8&iwloc=&output=embed`;
 ---
 
@@ -35,10 +33,10 @@ const mapEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(business.s
           </ol>
         </nav>
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-5 text-white hero-text-shadow">
-          Termin? Schnellster Weg ist ein Anruf.
+          Termin? Anrufen oder schreiben.
         </h1>
         <p class="text-lg md:text-xl text-white/90 leading-relaxed mb-8 hero-text-shadow">
-          Rufen Sie uns einfach an - wir besprechen Ihr Anliegen und finden direkt einen Termin. Lieber schreiben? Nutzen Sie das Formular unten, wir melden uns spätestens am nächsten Werktag zurück.
+          Wir arbeiten ausschließlich nach Termin. Vereinbaren Sie Ihren Termin bequem telefonisch oder per E-Mail - wir melden uns spätestens am nächsten Werktag bei Ihnen zurück.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-3">
@@ -60,129 +58,65 @@ const mapEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(business.s
     </div>
   </section>
 
-  <!-- Hauptbereich: Formular + Adresse + Map -->
+  <!-- Hauptbereich: Telefon/E-Mail-Cards + Sidebar -->
   <section class="py-14 md:py-20 bg-[var(--color-bg)]">
     <div class="container-x">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
-        <!-- Formular -->
-        <div class="lg:col-span-7">
-          <div class="bg-[var(--color-bg-alt)] rounded-3xl p-7 md:p-10 border border-[var(--color-border)]">
-            <h2 class="text-2xl md:text-3xl font-bold mb-2">Termin per Formular anfragen</h2>
-            <p class="text-[var(--color-text-muted)] mb-7">
-              Ein paar Angaben - wir rufen Sie zurück. Pflichtfelder sind mit * markiert.
+        <!-- Telefon + E-Mail Cards -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="max-w-2xl mb-2">
+            <span class="text-sm font-semibold text-[var(--color-accent)] uppercase tracking-wider">So erreichen Sie uns</span>
+            <h2 class="text-3xl md:text-4xl font-bold mt-3 mb-4 leading-tight">Anruf oder E-Mail - Sie wählen.</h2>
+            <p class="text-lg text-[var(--color-text-muted)] leading-relaxed">
+              Termine vereinbaren wir ausschließlich telefonisch oder per E-Mail. So sind wir sicher, dass Sie ohne Wartezeit drankommen.
             </p>
-
-            <form
-              action={formAction}
-              method="POST"
-              class="space-y-5"
-              data-contact-form
-              novalidate
-            >
-              <!-- Honeypot Spam-Schutz -->
-              <div aria-hidden="true" style="position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden;">
-                <label>Bitte nicht ausfüllen <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
-              </div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label for="name" class="block text-sm font-semibold mb-1.5">Name *</label>
-                  <input
-                    id="name" name="name" type="text" required autocomplete="name"
-                    class="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-base focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent-soft)]"
-                  />
-                </div>
-                <div>
-                  <label for="phone" class="block text-sm font-semibold mb-1.5">Telefon *</label>
-                  <input
-                    id="phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel"
-                    class="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-base focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent-soft)]"
-                  />
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label for="email" class="block text-sm font-semibold mb-1.5">E-Mail</label>
-                  <input
-                    id="email" name="email" type="email" autocomplete="email"
-                    class="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-base focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent-soft)]"
-                  />
-                </div>
-                <div>
-                  <label for="plate" class="block text-sm font-semibold mb-1.5">Kennzeichen</label>
-                  <input
-                    id="plate" name="plate" type="text" placeholder="z. B. M-AB 1234"
-                    class="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-base focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent-soft)]"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label for="topic" class="block text-sm font-semibold mb-1.5">Anliegen *</label>
-                <select
-                  id="topic" name="topic" required
-                  class="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-base focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent-soft)]"
-                >
-                  <option value="">Bitte wählen …</option>
-                  <option>HU / AU - Hauptuntersuchung</option>
-                  <option>Inspektion / Wartung</option>
-                  <option>Reparatur</option>
-                  <option>Bremsen-Service</option>
-                  <option>Reifenwechsel / -einlagerung</option>
-                  <option>Klimaanlagen-Service</option>
-                  <option>Diagnose / Fehlersuche</option>
-                  <option>Ölwechsel</option>
-                  <option>Achsvermessung</option>
-                  <option>Sonstiges</option>
-                </select>
-              </div>
-
-              <div>
-                <label for="appointment" class="block text-sm font-semibold mb-1.5">Wunschtermin</label>
-                <input
-                  id="appointment" name="appointment" type="text" placeholder="z. B. nächste Woche vormittags"
-                  class="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-base focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent-soft)]"
-                />
-              </div>
-
-              <div>
-                <label for="message" class="block text-sm font-semibold mb-1.5">Beschreibung *</label>
-                <textarea
-                  id="message" name="message" rows="5" required
-                  placeholder="Was sollen wir uns ansehen? Symptome, Zeitpunkt, Besonderheiten …"
-                  class="w-full rounded-xl border border-[var(--color-border)] bg-white px-4 py-3 text-base focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent-soft)]"
-                ></textarea>
-              </div>
-
-              <div class="flex items-start gap-3">
-                <input
-                  id="privacy" name="privacy" type="checkbox" required
-                  class="mt-1 w-4 h-4 rounded border-[var(--color-border)] text-[var(--color-accent)] focus:ring-[var(--color-accent)]"
-                />
-                <label for="privacy" class="text-sm text-[var(--color-text-muted)] leading-relaxed">
-                  Ich habe die <a href="/datenschutz/" class="text-[var(--color-accent)] underline underline-offset-2 hover:text-[var(--color-accent-hover)]">Datenschutzerklärung</a> gelesen und stimme zu, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. *
-                </label>
-              </div>
-
-              <button
-                type="submit"
-                class="btn btn-accent w-full text-lg py-4"
-              >
-                Anfrage senden
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M5 12h14M13 5l7 7-7 7"/>
-                </svg>
-              </button>
-
-              <div data-form-success class="hidden bg-[#E6F5E9] border border-[#9DD3A8] text-[#1F6B36] rounded-xl p-4 text-sm">
-                Danke für Ihre Anfrage! Wir melden uns spätestens am nächsten Werktag bei Ihnen zurück.
-              </div>
-            </form>
           </div>
+
+          <!-- Telefon Card -->
+          <a
+            href={business.phoneHref}
+            class="group block bg-[var(--color-bg-alt)] rounded-2xl p-6 md:p-8 border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:shadow-lg transition-all"
+          >
+            <div class="flex items-start gap-5">
+              <div class="w-14 h-14 rounded-2xl bg-[var(--color-accent)] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <div class="text-sm font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-1">Telefon</div>
+                <div class="text-3xl md:text-4xl font-bold text-[var(--color-accent)] font-num mb-2">{business.phoneDisplay}</div>
+                <p class="text-[var(--color-text-muted)] leading-relaxed">
+                  Persönlich erreichbar Mo - Do von 7 bis 17 Uhr, Fr bis 12 Uhr. Außerhalb dieser Zeiten am besten per E-Mail.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- E-Mail Card -->
+          <a
+            href={`mailto:${business.email}`}
+            class="group block bg-[var(--color-bg-alt)] rounded-2xl p-6 md:p-8 border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:shadow-lg transition-all"
+          >
+            <div class="flex items-start gap-5">
+              <div class="w-14 h-14 rounded-2xl bg-[var(--color-dark)] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="M2 7l10 7 10-7"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <div class="text-sm font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-1">E-Mail</div>
+                <div class="text-2xl md:text-3xl font-bold text-[var(--color-text)] mb-2 break-all">{business.email}</div>
+                <p class="text-[var(--color-text-muted)] leading-relaxed">
+                  Schreiben Sie uns Ihr Anliegen, gerne mit Kennzeichen und Wunschtermin. Wir melden uns spätestens am nächsten Werktag zurück.
+                </p>
+              </div>
+            </div>
+          </a>
         </div>
 
-        <!-- Adresse & Öffnungszeiten -->
+        <!-- Sidebar: Adresse + Öffnungszeiten -->
         <aside class="lg:col-span-5 space-y-6">
           <div class="bg-[var(--color-bg-alt)] rounded-2xl p-7 border border-[var(--color-border)]">
             <h2 class="text-xl font-bold mb-5">Adresse & Anfahrt</h2>
@@ -192,19 +126,7 @@ const mapEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(business.s
                 <div>
                   <div class="font-semibold text-[var(--color-text)]">{business.street}</div>
                   <div class="text-[var(--color-text-muted)]">{business.zip} {business.city}</div>
-                  <div class="text-sm text-[var(--color-text-muted)] mt-1">{business.district}</div>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="flex-shrink-0 mt-0.5 text-[var(--color-accent)]" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
-                <div>
-                  <a href={business.phoneHref} class="text-xl font-bold text-[var(--color-accent)] hover:text-[var(--color-accent-hover)] font-num">{business.phoneDisplay}</a>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg class="flex-shrink-0 mt-0.5 text-[var(--color-accent)]" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-                <div>
-                  <a href={`mailto:${business.email}`} class="text-[var(--color-text)] hover:text-[var(--color-accent)] break-all">{business.email}</a>
+                  <div class="text-sm text-[var(--color-text-muted)] mt-1">Stadtteil Gern</div>
                 </div>
               </div>
               <div class="flex items-start gap-3">
@@ -239,7 +161,7 @@ const mapEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(business.s
               </tbody>
             </table>
             <p class="text-sm text-[var(--color-text-muted)] mt-5 leading-relaxed">
-              Außerhalb der Öffnungszeiten erreichen Sie uns am besten per E-Mail oder über das Formular.
+              Außerhalb der Öffnungszeiten erreichen Sie uns am besten per E-Mail.
             </p>
           </div>
         </aside>
@@ -247,50 +169,53 @@ const mapEmbed = `https://maps.google.com/maps?q=${encodeURIComponent(business.s
     </div>
   </section>
 
-  <!-- Map -->
-  <section class="bg-[var(--color-bg-alt)]">
-    <div class="rounded-none overflow-hidden h-[420px] md:h-[500px] border-y border-[var(--color-border)]">
-      <iframe
-        src={mapEmbed}
-        width="100%"
-        height="100%"
-        style="border:0;"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title={`Karte: ${business.name}, ${business.street}`}
-      ></iframe>
+  <!-- Map mit U-Bahn-Hervorhebung daneben -->
+  <section class="bg-[var(--color-bg-alt)] py-14 md:py-20">
+    <div class="container-x">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+        <!-- U-Bahn-Hinweis links -->
+        <div class="lg:col-span-4 flex flex-col justify-center">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--color-accent-soft)] text-[var(--color-accent-hover)] text-sm font-semibold mb-4 self-start">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14" r="1" fill="currentColor"/><circle cx="15" cy="14" r="1" fill="currentColor"/><path d="M8 17l-2 4M16 17l2 4"/></svg>
+            ÖPNV-Anbindung
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold leading-tight mb-4">
+            Direkt an der<br/><span class="text-[var(--color-accent)]">U-Bahn Gern (U1).</span>
+          </h2>
+          <p class="text-lg text-[var(--color-text-muted)] leading-relaxed mb-5">
+            Im Stadtteil Gern, fußläufig zur U-Bahn-Haltestelle Gern (Linie U1). So können Sie Ihren Wagen morgens abgeben und ohne Umwege weiter zur Arbeit fahren.
+          </p>
+          <ul class="space-y-2.5 mb-2">
+            <li class="flex items-start gap-2.5 text-[var(--color-text)]">
+              <svg class="mt-1 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F39239" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg>
+              <span>U-Bahn Gern (U1) - direkt vor der Tür</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-[var(--color-text)]">
+              <svg class="mt-1 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F39239" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg>
+              <span>Parkplätze unmittelbar vor der Werkstatt</span>
+            </li>
+            <li class="flex items-start gap-2.5 text-[var(--color-text)]">
+              <svg class="mt-1 flex-shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F39239" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg>
+              <span>Stadtteil Gern - nördlich der Innenstadt</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Map rechts -->
+        <div class="lg:col-span-8">
+          <div class="rounded-2xl overflow-hidden h-[420px] md:h-[500px] border border-[var(--color-border)] shadow-sm bg-white">
+            <iframe
+              src={mapEmbed}
+              width="100%"
+              height="100%"
+              style="border:0;"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title={`Karte: ${business.name}, ${business.street}`}
+            ></iframe>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
-
-<script is:inline>
-  // Wenn der Formspree-Endpoint nicht gesetzt ist, fallen wir auf mailto:-Versand zurück.
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('[data-contact-form]');
-    if (!form) return;
-    const action = form.getAttribute('action') || '';
-    if (action.startsWith('[FORMSPREE_URL') || action === '') {
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const data = new FormData(form);
-        if (data.get('_gotcha')) return; // Honeypot
-        const subject = encodeURIComponent('Werkstatt-Anfrage von ' + (data.get('name') || ''));
-        const lines = [
-          'Name: ' + (data.get('name') || ''),
-          'Telefon: ' + (data.get('phone') || ''),
-          'E-Mail: ' + (data.get('email') || ''),
-          'Kennzeichen: ' + (data.get('plate') || ''),
-          'Anliegen: ' + (data.get('topic') || ''),
-          'Wunschtermin: ' + (data.get('appointment') || ''),
-          '',
-          'Beschreibung:',
-          (data.get('message') || ''),
-        ];
-        const body = encodeURIComponent(lines.join('\n'));
-        window.location.href = 'mailto:info@kfz-service-beyer.de?subject=' + subject + '&body=' + body;
-        const ok = form.querySelector('[data-form-success]');
-        if (ok) ok.classList.remove('hidden');
-      });
-    }
-  });
-</script>

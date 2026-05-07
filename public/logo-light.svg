@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 280" role="img" aria-label="Kfz Service Beyer Logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 280" role="img" aria-label="Kfz Service Beyer Logo">
   <g>
     <polygon points="20,30 220,30 170,110 20,110" fill="#F39239"/>
     <polygon points="20,140 220,140 170,220 20,220" fill="#F39239"/>
     <polygon points="240,140 410,140 360,220 240,220" fill="#FFFFFF"/>
   </g>
-  <text x="450" y="115" font-family="Manrope, Inter, system-ui, sans-serif" font-size="92" font-weight="800" fill="#FFFFFF" letter-spacing="-2">KFZ SERVICE</text>
-  <text x="640" y="220" font-family="Manrope, Inter, system-ui, sans-serif" font-size="92" font-weight="800" fill="#F39239" letter-spacing="-2">BEYER</text>
+  <text x="240" y="115" font-family="Manrope, Inter, system-ui, sans-serif" font-size="92" font-weight="800" fill="#FFFFFF" letter-spacing="-2">KFZ SERVICE</text>
+  <text x="430" y="220" font-family="Manrope, Inter, system-ui, sans-serif" font-size="92" font-weight="800" fill="#F39239" letter-spacing="-2">BEYER</text>
 </svg>

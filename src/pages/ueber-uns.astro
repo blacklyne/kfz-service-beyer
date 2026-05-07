@@ -21,7 +21,7 @@ const values = [
   },
   {
     title: 'Persönlich',
-    text: `${business.owner} steht selbst in der Werkstatt. Sie sprechen mit dem Mechaniker, nicht mit einem Sachbearbeiter.`,
+    text: `${business.ownerShort} und sein ${business.teamSize}-köpfiges Team kümmern sich persönlich um Sie. Sie sprechen mit Mechanikern, nicht mit Sachbearbeitern.`,
     icon: 'user',
   },
   {
@@ -66,7 +66,7 @@ const iconMap: Record<string, string> = {
           Eine Werkstatt mit Handschlag-Mentalität.
         </h1>
         <p class="text-lg md:text-xl text-white/90 leading-relaxed hero-text-shadow">
-          Kfz Service Beyer ist eine inhabergeführte Werkstatt in München. Klein genug, dass Sie persönlich betreut werden - gut genug, dass auch Münchner Stammkunden seit Jahren wiederkommen.
+          Kfz Service Beyer ist eine inhabergeführte Werkstatt im Münchner Stadtteil Gern. Direkt an der U-Bahn (U1). Persönlich betreut, fair beraten - ein Familienbetrieb mit {business.teamSize}-köpfigem Team.
         </p>
       </div>
     </div>
@@ -79,14 +79,14 @@ const iconMap: Record<string, string> = {
         <div class="lg:col-span-7">
           <span class="text-sm font-semibold text-[var(--color-accent)] uppercase tracking-wider">Unsere Geschichte</span>
           <h2 class="text-3xl md:text-4xl font-bold mt-3 mb-6 leading-tight">
-            Inhabergeführt von {business.owner}.
+            Inhabergeführt von {business.owner} - mit einem {business.teamSize}-köpfigen Team.
           </h2>
           <div class="space-y-5 text-lg text-[var(--color-text-muted)] leading-relaxed">
             <p>
-              In der Waisenhausstraße 44 - am Übergang zwischen Moosach und Neuhausen, fußläufig zur U-Bahn - finden Sie uns: eine kleine, persönlich geführte Kfz-Werkstatt. Was bei uns zählt, ist nicht das größte Logo an der Wand, sondern dass Ihr Auto wieder läuft. Schnell, fair und ohne Geschwätz.
+              In der Waisenhausstraße 44 - direkt an der U-Bahn-Haltestelle Gern (U1), im Stadtteil Gern - finden Sie uns: eine inhabergeführte Kfz-Werkstatt. Was bei uns zählt, ist nicht das größte Logo an der Wand, sondern dass Ihr Auto wieder läuft. Fair, transparent und ohne Geschwätz.
             </p>
             <p>
-              {business.owner} führt den Betrieb selbst. Das bedeutet für Sie: Wenn Sie morgens vorbeikommen, sprechen Sie mit demjenigen, der Ihr Auto nachher auch tatsächlich auf die Hebebühne stellt. Keine Telefon-Hotline, keine Schicht-Wechsel, keine widersprüchlichen Informationen.
+              {business.owner} hat den Betrieb über die Jahre aufgebaut und arbeitet heute mit einem festen Team aus {business.teamSize} Mitarbeitern in der Werkstatt. Das bedeutet für Sie: Wir haben Kapazität für Termine in dieser oder nächster Woche - und gleichzeitig die persönliche Betreuung eines Familienbetriebs. Keine Telefon-Hotline, keine widersprüchlichen Informationen.
             </p>
             <p>
               Was uns wichtig ist: Wir erklären, bevor wir reparieren. Sie wissen vorher, was es kostet - und was passieren würde, wenn man die Reparatur aufschiebt. So entscheiden Sie informiert. Genau das ist es, was Münchner Stammkunden seit Jahren bei uns schätzen - und warum unsere Google-Bewertungen aussehen, wie sie aussehen.
@@ -167,7 +167,7 @@ const iconMap: Record<string, string> = {
               Gleichzeitig ist bei uns nichts „Massenabfertigung". Jedes Fahrzeug bekommt die Aufmerksamkeit, die es braucht. Wenn ein Teil günstiger zu reparieren statt zu tauschen ist, sagen wir es Ihnen - auch wenn wir damit weniger verdienen.
             </p>
             <p>
-              <strong>Sie können Ihren Wagen morgens abgeben</strong>, in die nahegelegene U-Bahn steigen und zur Arbeit fahren. Wir rufen Sie an, sobald wir den Fehler gefunden haben, und sprechen die Reparatur ab. Am Abend ist das Auto in vielen Fällen schon wieder fertig.
+              <strong>Sie geben Ihren Wagen zum vereinbarten Termin ab</strong>, steigen direkt vor der Tür in die U-Bahn (U1 Gern) und fahren weiter zur Arbeit. Wir rufen Sie an, sobald wir den Fehler gefunden haben, und sprechen die Reparatur ab. Am Abend ist das Auto in vielen Fällen schon wieder fertig.
             </p>
           </div>
         </div>

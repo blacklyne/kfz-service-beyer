@@ -9,7 +9,9 @@
 export const business = {
   name: 'Kfz Service Beyer',
   legalName: 'Kfz Service Beyer',
-  owner: 'Herr Beyer',
+  owner: 'Maximilian Beyer',
+  ownerShort: 'Max Beyer',
+  teamSize: 5,
   phone: '+49 89 155072',
   phoneHref: 'tel:+4989155072',
   phoneDisplay: '089 155072',
@@ -18,7 +20,7 @@ export const business = {
   street: 'Waisenhausstraße 44',
   zip: '80637',
   city: 'München',
-  district: 'München-Moosach / Neuhausen',
+  district: 'München-Gern',
   country: 'DE',
   // Google Maps Koordinaten (aus Brief)
   geo: { lat: 48.1617692, lng: 11.5295949 },
@@ -41,7 +43,8 @@ export const business = {
     { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], opens: '07:00', closes: '17:00' },
     { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Friday', opens: '07:00', closes: '12:00' },
   ],
-  transit: 'Fußläufig zur U-Bahn - am Übergang Moosach / Neuhausen.',
+  transit: 'Direkt an der U-Bahn-Haltestelle Gern (U1).',
+  transitShort: 'U-Bahn Gern (U1)',
   mapsEmbed:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.4!2d11.5295949!3d48.1617692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e76405354b9c9%3A0x734e7b8a33c2ef3f!2sKfz%20Service%20Beyer!5e0!3m2!1sde!2sde!4v1700000000',
   mapsLink:
@@ -68,14 +71,14 @@ export const services: Service[] = [
   {
     slug: 'hu-au',
     title: 'HU / AU - Hauptuntersuchung',
-    short: 'TÜV-Termin direkt bei uns - inkl. Vorab-Check und Mängelbehebung.',
+    short: 'TÜV-Termin direkt bei uns - mit unabhängiger Prüforganisation.',
     description:
-      'Wir prüfen Ihr Fahrzeug vor der Hauptuntersuchung sorgfältig auf alle prüfrelevanten Punkte und beheben kleine Mängel direkt. Den HU/AU-Termin organisieren wir gemeinsam mit einem unabhängigen Prüforganisation - bequem in einem Werkstattbesuch.',
+      'Den HU/AU-Termin organisieren wir gemeinsam mit einer unabhängigen Prüforganisation - bequem in einem Werkstattbesuch. Reine Durchführung der Hauptuntersuchung; falls Sie eine Werkstatt-Inspektion vorab wünschen, vereinbaren Sie diese bitte separat.',
     bullets: [
-      'Vorab-Check aller HU-relevanten Punkte',
-      'Sofortige Mängelbeseitigung möglich',
-      'Termin mit Prüforganisation vor Ort',
+      'Termin mit unabhängiger Prüforganisation vor Ort',
       'Plakette ohne Umweg',
+      'Auf Wunsch direkt mit Inspektion kombinierbar',
+      'Klare Auskunft, was nach der Prüfung zu tun ist',
     ],
     icon: 'shield',
   },
@@ -110,7 +113,7 @@ export const services: Service[] = [
   {
     slug: 'reifen',
     title: 'Reifenservice & Einlagerung',
-    short: 'Wechsel, Auswuchten, Einlagern - saisonal oder spontan.',
+    short: 'Wechsel, Auswuchten, Einlagern - nach Terminvereinbarung.',
     description:
       'Reifenwechsel mit Auswuchten und Druckkontrolle. Auf Wunsch lagern wir Ihre Sommer- oder Winterreifen fachgerecht bei uns ein - Sie kommen einfach zum Termin, und wir haben Ihre Reifen schon bereit.',
     bullets: [
@@ -154,7 +157,7 @@ export const services: Service[] = [
     title: 'Ölwechsel & Verschleiß',
     short: 'Öl, Filter, Zündkerzen - alles was regelmäßig fällig wird.',
     description:
-      'Schnell und ohne Termin (sofern wir Zeit haben): Ölwechsel mit passendem Öl nach Herstellerfreigabe, neuer Ölfilter, dazu Luft-, Innenraum- und Kraftstofffilter. Bei Bedarf auch Zündkerzen und Wischer.',
+      'Ölwechsel mit passendem Öl nach Herstellerfreigabe, neuer Ölfilter, dazu Luft-, Innenraum- und Kraftstofffilter. Bei Bedarf auch Zündkerzen und Wischer. Bitte vorab telefonisch einen Termin vereinbaren.',
     bullets: [
       'Motoröl nach Herstellerfreigabe',
       'Öl-, Luft-, Innenraum- und Kraftstofffilter',

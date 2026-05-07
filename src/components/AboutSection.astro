@@ -6,11 +6,11 @@ const aboutImg = 'https://images.pexels.com/photos/4489734/pexels-photo-4489734.
 const aboutImgAlt = 'Auto auf der Hebebühne in der Kfz-Werkstatt';
 
 const checks = [
-  `Inhabergeführt von ${business.owner}`,
-  'Fußläufig zur U-Bahn (Moosach / Neuhausen)',
+  `Inhabergeführt von ${business.owner} - ${business.teamSize}-köpfiges Team`,
+  'Direkt an der U-Bahn Gern (U1) - Stadtteil Gern, München',
   'Faire Festpreise - vorab abgestimmt',
   'Persönliche Beratung statt Standardabwicklung',
-  'Reparaturen oft in Rekordzeit',
+  'Termine zuverlässig nach Vereinbarung',
 ];
 ---
 
@@ -23,11 +23,11 @@ const checks = [
           Ihr Auto in guten Händen.
         </h2>
         <p class="text-lg text-[var(--color-text-muted)] leading-relaxed mb-5">
-          Kfz Service Beyer ist eine kleine, inhabergeführte Werkstatt in München.
-          Sie finden uns in der Waisenhausstraße 44 - direkt am Übergang zwischen Moosach und Neuhausen, fußläufig zur U-Bahn.
+          Kfz Service Beyer ist eine inhabergeführte Werkstatt im Stadtteil Gern in München.
+          Sie finden uns in der Waisenhausstraße 44 - direkt an der U-Bahn-Haltestelle Gern (U1).
         </p>
         <p class="text-lg text-[var(--color-text-muted)] leading-relaxed mb-8">
-          {business.owner} führt den Betrieb persönlich. Das heißt für Sie: Sie sprechen mit dem, der das Auto auch tatsächlich repariert. Wir nehmen uns Zeit zu erklären, was nötig ist - und was nicht.
+          {business.owner} führt den Betrieb persönlich, gemeinsam mit einem {business.teamSize}-köpfigen Team. Wir nehmen uns Zeit zu erklären, was nötig ist - und was nicht. Termine vereinbaren Sie bequem telefonisch oder per E-Mail.
         </p>
 
         <ul class="space-y-3 mb-8">

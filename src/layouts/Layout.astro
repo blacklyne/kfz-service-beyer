@@ -62,11 +62,13 @@ const businessSchema = {
     })),
   },
   areaServed: [
-    { '@type': 'City', name: 'München' },
-    { '@type': 'AdministrativeArea', name: 'München-Moosach' },
-    { '@type': 'AdministrativeArea', name: 'München-Neuhausen' },
     { '@type': 'AdministrativeArea', name: 'München-Gern' },
+    { '@type': 'City', name: 'München' },
+    { '@type': 'AdministrativeArea', name: 'München-Neuhausen' },
+    { '@type': 'AdministrativeArea', name: 'München-Moosach' },
   ],
+  publicAccess: true,
+  paymentAccepted: 'Cash, EC, Bank transfer',
 };
 ---
 
