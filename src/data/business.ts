@@ -1,16 +1,13 @@
 /*
-  Zentrale Stammdaten KFZ Service Beyer.
-  Quelle: Brief vom Inhaber + Google Places (Place ID ChIJyUS5U0B2nkcRP-_CM4p7TnM).
-
-  Felder mit [BITTE ERGÄNZEN] sind für Impressum/DSGVO relevant
-  und müssen vor Live-Schalten vom Inhaber befüllt werden.
+  Zentrale Stammdaten Kfz Service Beyer.
+  Quelle: Inhaber + Google Places (Place ID ChIJyUS5U0B2nkcRP-_CM4p7TnM).
 */
 
 export const business = {
   name: 'Kfz Service Beyer',
   legalName: 'Kfz Service Beyer',
   owner: 'Maximilian Beyer',
-  ownerShort: 'Max Beyer',
+  ownerShort: 'Maximilian Beyer',
   teamSize: 5,
   phone: '+49 89 155072',
   phoneHref: 'tel:+4989155072',
@@ -86,12 +83,12 @@ export const services: Service[] = [
     title: 'Inspektion & Wartung',
     short: 'Nach Herstellervorgabe - mit Stempel im Scheckheft.',
     description:
-      'Wir warten Ihr Fahrzeug nach den Vorgaben des Herstellers - egal ob Klein-, Mittel- oder Oberklasse. Sie behalten Ihren Garantieanspruch und einen lückenlosen Scheckheft-Eintrag. Transparent erklären wir, was tatsächlich nötig ist - und was warten kann.',
+      'Wir warten Ihr Fahrzeug nach den Vorgaben des Herstellers - egal ob Klein-, Mittel- oder Oberklasse. Sie erhalten einen lückenlosen Scheckheft-Eintrag. Transparent erklären wir, was tatsächlich nötig ist - und was warten kann.',
     bullets: [
       'Service nach Herstellervorgabe',
       'Eintrag ins digitale & klassische Scheckheft',
-      'Garantieerhalt bei jüngeren Fahrzeugen',
       'Klare Empfehlungen, keine versteckten Posten',
+      'Sichtprüfung Verschleißteile inklusive',
     ],
     icon: 'wrench',
   },

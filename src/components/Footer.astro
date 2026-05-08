@@ -9,7 +9,7 @@ const year = new Date().getFullYear();
       <div class="md:col-span-2">
         <img src="/logo-light.svg" alt={`${business.name} München Logo`} class="h-11 w-auto mb-5" width="220" height="56" />
         <p class="text-white/70 leading-relaxed text-sm max-w-md">
-          Inhabergeführte KFZ-Werkstatt in München. Inspektion, Reparatur und TÜV - fair, transparent und persönlich. Ihre Werkstatt seit Jahren am Übergang Moosach / Neuhausen.
+          Inhabergeführte KFZ-Werkstatt in München, Stadtteil Gern / Nymphenburg. Direkt an der U-Bahn-Haltestelle Gern (U1). Inspektion, Reparatur und TÜV - fair, transparent und persönlich.
         </p>
         <div class="mt-5 flex flex-wrap items-center gap-3 text-sm">
           <span class="inline-flex items-center gap-1.5 text-white/85">
@@ -35,6 +35,8 @@ const year = new Date().getFullYear();
         <ul class="space-y-2 text-white/70 text-sm">
           <li>{business.street}</li>
           <li>{business.zip} {business.city}</li>
+          <li class="text-white/55 text-xs">Stadtteil Gern / Nymphenburg</li>
+          <li class="text-white/55 text-xs">Direkt an der U-Bahn-Haltestelle Gern (U1)</li>
           <li class="pt-2">
             <a href={business.phoneHref} class="text-white font-semibold hover:text-[var(--color-accent)] font-num transition-colors">
               {business.phoneDisplay}

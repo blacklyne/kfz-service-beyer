@@ -14,37 +14,25 @@ const description = `Impressum von ${business.name}, ${business.street}, ${busin
       <h2>Angaben gemäß § 5 TMG</h2>
       <p>
         {business.name}<br/>
-        Inhaber: {business.owner} <span class="text-[var(--color-text-muted)]">[BITTE ERGÄNZEN: Vorname]</span><br/>
+        Inhaber: {business.owner}<br/>
         {business.street}<br/>
         {business.zip} {business.city}
-      </p>
-      <p class="text-sm text-[var(--color-text-muted)]">
-        [BITTE ERGÄNZEN: Rechtsform - Einzelunternehmen, GbR, GmbH? Bei juristischen Personen: Vertretungsberechtigte und Handelsregister-Eintrag (Registergericht + HRB-Nummer).]
       </p>
 
       <h2>Kontakt</h2>
       <p>
         Telefon: <a href={business.phoneHref} class="font-num">{business.phoneDisplay}</a><br/>
-        E-Mail: <a href={`mailto:${business.email}`}>{business.email}</a> <span class="text-[var(--color-text-muted)]">[BITTE ERGÄNZEN/PRÜFEN]</span>
-      </p>
-
-      <h2>Umsatzsteuer-ID</h2>
-      <p>
-        Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br/>
-        <span class="text-[var(--color-text-muted)]">[BITTE ERGÄNZEN: USt-ID, z. B. DE123456789]</span>
+        E-Mail: <a href={`mailto:${business.email}`}>{business.email}</a>
       </p>
 
       <h2>Berufsrechtliche Angaben</h2>
       <p>
-        Berufsbezeichnung: Kraftfahrzeugtechniker-Meister <span class="text-[var(--color-text-muted)]">[BITTE PRÜFEN]</span><br/>
+        Berufsbezeichnung: Kraftfahrzeugtechniker-Meister<br/>
         Verliehen in der Bundesrepublik Deutschland<br/>
         Zuständige Kammer: Handwerkskammer für München und Oberbayern,<br/>
         Max-Joseph-Straße 4, 80333 München<br/>
         Es gelten folgende berufsrechtliche Regelungen: Handwerksordnung (HwO).<br/>
         Einsehbar unter: <a href="https://www.gesetze-im-internet.de/hwo/" target="_blank" rel="noopener">gesetze-im-internet.de/hwo</a>
-      </p>
-      <p class="text-sm text-[var(--color-text-muted)]">
-        [BITTE ERGÄNZEN: Eintragung in die Handwerksrolle und Meisterbetrieb-Status durch den Inhaber bestätigen lassen.]
       </p>
 
       <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
